@@ -3,6 +3,7 @@ import HeroBackground from '../../assets/HeroBackground.png';
 import { IoIosSearch } from "react-icons/io";
 import Lottie from 'lottie-react'
 import Job_Animation from '../Jobs/Animation/Job_Animation.json'
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -28,6 +29,7 @@ const Hero = () => {
                         // onChange={handleSearchChange}
                     />
                 </div>
+               
             </div>
         </div>
         <div className='w-[500px] h-[500px]'>
