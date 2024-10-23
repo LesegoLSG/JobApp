@@ -1,0 +1,110 @@
+.testimonial-box-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: blue;
+    height: auto;
+
+}
+
+
+
+.testimonial-box {
+    /* background-color: red; */
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    /* margin: 15px; */
+    cursor: pointer;
+    width: 100%;
+    flex-grow: 1;
+    /* Ensure equal width for all cards */
+
+}
+
+.profile-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: #3d3d3d;
+}
+
+.name-user {
+    display: flex;
+    flex-direction: column;
+}
+
+.name-user strong {
+    color: #3d3d3d;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+.name-user span {
+    color: #979797;
+    font-size: 0.8rem;
+}
+
+.reviews {
+    color: #f9d71c;
+}
+
+.box-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.client-comment p {
+    width: 100%;
+    font-size: 1rem;
+    color: #000000;
+}
+
+@media(max-width:1060px) {
+    .testimonial-box {
+        width: 45%;
+        /* Adjust width for smaller screens */
+        /* Adjust width for smaller screens */
+        padding: 10px;
+    }
+}
+
+@media(max-width:790px) {
+    .testimonial-box {
+        width: 100%;
+        /* Set width to 100% for smaller screens */
+
+    }
+
+}
+
+@media(max-width:340px) {
+    .box-top {
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+
+    }
+
+    .reviews {
+        margin-top: 10px;
+    }
+}

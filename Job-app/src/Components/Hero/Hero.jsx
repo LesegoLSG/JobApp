@@ -1,45 +1,38 @@
-import React from 'react';
-import HeroBackground from '../../assets/HeroBackground.png';
-import { IoIosSearch } from "react-icons/io";
-import Lottie from 'lottie-react'
-import Job_Animation from '../Jobs/Animation/Job_Animation.json'
-import { Link } from 'react-router-dom';
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
   return (
-    <section className=' w-full h-screen flex justify-center items-center ' id='Hero'  
-    style={{ backgroundImage: `url(${HeroBackground})`, 
-    backgroundSize: '100% 100%',
-     backgroundPosition: 'center' }}>
+    <div
+      className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden"
+      id="Hero"
+    >
+      {/* Background Image */}
+      <img
+        src="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=1600"
+        alt="Recruitment agency banner"
+        className="object-cover w-full h-full"
+      />
 
-      <div className=" flex flex-col-reverse md:flex-row justify-center items-center gap-x-40">
-        <div className="w-[50%] h-auto">
-          <div className="my-10">
-          <h1 className='text-4xl md:text-6xl font-bold'>
-            Find Your <span className="text-secondary">Dream <br/>Job</span> Here Easy And Fast
-          </h1>
-          </div>
-          <div className="w-full items-center gap-5">
-                <div className="w-full flex items-center gap-3 bg-white rounded-lg px-4 shadow-sm border border-gray-400">
-                    <IoIosSearch color="#6366f1"/>
-                    <input
-                        type="text"
-                        placeholder="Search for Job title"
-                        className="w-full h-10 bg-white rounded-lg outline-none text-gray-700"
-                        // onChange={handleSearchChange}
-                    />
-                </div>
-               
-            </div>
-        </div>
-        <div className='w-[500px] h-[500px]'>
-          <Lottie animationData={Job_Animation}/>
-        </div>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black bg-opacity-40 text-white"></div>
 
+      {/* Banner Content */}
+      <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 lg:px-0">
+        <h1 className="text-white text-3xl md:text-5xl lg:text-6xl font-bold mb-4">
+          Connect with the Best IT Jobs
+        </h1>
+        <p className="text-white text-lg md:text-xl mb-6 max-w-lg">
+          Join leading tech companies with our expert recruitment services. Let
+          us connect you with the job you deserve.
+        </p>
+        <button className="button-action" onClick={() => navigate("/jobs-all")}>
+          Explore Jobs
+        </button>
       </div>
+    </div>
+  );
+};
 
-    </section>
-  )
-}
-
-export default Hero
+export default Hero;

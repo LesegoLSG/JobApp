@@ -1,65 +1,67 @@
-import React, { useState } from 'react';
-import { IoBusinessOutline, IoLocationOutline, IoNewspaper, IoBookmarkOutline } from "react-icons/io5";
-import Pagination from './Pagination';
-import { Link } from 'react-router-dom';
+import React from "react";
+import {
+  IoBusinessOutline,
+  IoLocationOutline,
+  IoNewspaper,
+  IoBookmarkOutline,
+} from "react-icons/io5";
+import { Link } from "react-router-dom";
 
-const JobMainCard = ({job}) => {
-    console.log("In main card: ",job);
+const JobMainCard = ({ job }) => {
   return (
-    <div key={job.id} className="md:w-[49%] w-full bg-white mb-5 rounded-lg flex items-center justify-between md:p-8">
-    <div className="flex md:flex-row flex-col md:items-center items-start gap-6">
+    <div
+      key={job.id}
+      className="w-full md:w-[48%] bg-white mb-5 rounded-lg flex flex-col md:flex-row items-start md:items-center justify-between p-6 shadow-lg transition-transform duration-300 hover:shadow-2xl hover:scale-105"
+    >
+      <div className="flex flex-col md:flex-row md:items-center gap-6 w-full">
         <img
-            src={job.logo}
-            alt={job.title}
-            className="w-[70px]"
+          src={job.logo}
+          alt={job.title}
+          className="w-[70px] h-[70px] object-contain rounded-full shadow-md" // Added shadow and rounded image
         />
-        <div className="flex flex-col gap-[6px]">
-            <span className="font-semibold text-indigo-500 text-[22px]">
-                {job.title}
+        <div className="flex flex-col gap-[8px] w-full">
+          <div className="flex items-center justify-between">
+            <span className="font-semibold text-gray-900 text-[18px]">
+              {job.title}
             </span>
-            {/* Business outline */}
-            <div className="flex items-center gap-2">
-                <IoBusinessOutline
-                    width={"18px"}
-                    height={"18px"}
-                    color="#555"
-                />
-                <span className="text-[14px] font-medium text-gray-600">
-                    {job.company}
-                </span>
-            </div>
-            {/* Location */}
-            <div className="flex items-center gap-2">
-                <IoLocationOutline
-                    width={"18px"}
-                    height={"18px"}
-                    color="#555"
-                />
-                <span className="text-[14px] font-medium text-gray-600">
-                    {job.workStatus}
-                </span>
-            </div>
-            {/* Newspaper */}
-            <div className="flex items-center gap-2">
-                <IoNewspaper
-                    width={"18px"}
-                    height={"18px"}
-                    color="#555"
-                />
-                <span className="text-[14px] font-medium text-gray-600">
-                    {job.contractStatus}
-                </span>
-            </div>
+            <span className="text-sm text-gray-500 italic">
+              Posted: {job.postedDate}
+            </span>
+          </div>
+          {/* Company Name */}
+          <div className="flex items-center gap-2 text-gray-600">
+            <IoBusinessOutline width={"18px"} height={"18px"} />
+            <span className="text-[14px] font-medium">{job.company}</span>
+          </div>
+          {/* Location */}
+          <div className="flex items-center gap-2 text-gray-600">
+            <IoLocationOutline width={"18px"} height={"18px"} />
+            <span className="text-[14px] font-medium">{job.workStatus}</span>
+          </div>
+          {/* Contract Status */}
+          <div className="flex items-center gap-2 text-gray-600">
+            <IoNewspaper width={"18px"} height={"18px"} />
+            <span className="text-[14px] font-medium">
+              {job.contractStatus}
+            </span>
+          </div>
         </div>
-    </div>
-    <div className="flex flex-col gap-4 self-end">
-        <Link to={`/singlejob/${job.id}`} className="button-action text-center cursor-pointer">
-            Apply
+      </div>
+      {/* Actions */}
+      <div className="flex flex-col gap-4 mt-4 md:mt-0 self-stretch md:self-end">
+        <Link
+          to={`/singlejob/${job.id}`}
+          className="button-action text-center py-2 px-4 bg-secondary text-white rounded-lg shadow-md transition-colors duration-300 hover:bg-secondary-dark"
+        >
+          Apply
         </Link>
-        <button className="button-action-save-job flex justify-center items-center gap-2"><IoBookmarkOutline />Save Job</button>
+        <button className="button-action-save-job flex justify-center items-center gap-2 py-2 px-4 bg-gray-200 rounded-lg hover:bg-gray-300 transition-colors duration-300">
+          <IoBookmarkOutline />
+          Save Job
+        </button>
+      </div>
     </div>
-</div>
-  )
-}
+  );
+};
 
-export default JobMainCard
+export default JobMainCard;
