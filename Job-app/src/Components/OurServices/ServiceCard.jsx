@@ -12,7 +12,7 @@ const ServiceCard = ({ singleService }) => {
         alt={singleService.service}
         className="w-full h-48 object-cover"
       />
-      <div className="p-6">
+      <div className="p-6 min-h-60">
         {/* Service Title */}
         <h2 className=" mb-2 text-center h3-small">{singleService.service}</h2>
         {/* Service Description */}

@@ -4,6 +4,7 @@ import testimonialData from "./TestimonialData"; // assuming an array of testimo
 import { motion } from "framer-motion";
 import { headerVariant, cardVariant } from "../Reusables/AnimationVariants";
 
+// Testimonial main section
 const Testimonial = () => {
   const [showMore, setShowMore] = useState(false);
 
@@ -42,8 +43,8 @@ const Testimonial = () => {
           </motion.div>
         ))}
       </div>
-      {/* View More text */}
 
+      {/* View More text */}
       {testimonialData.length > 3 && (
         <div className="w-full text-end max-w-6xl">
           <p

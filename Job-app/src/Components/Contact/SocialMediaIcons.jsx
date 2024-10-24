@@ -6,10 +6,11 @@ import {
   IoLogoLinkedin,
 } from "react-icons/io5";
 import { FaXTwitter } from "react-icons/fa6";
-
+//Social media for contact form
 const SocialMediaIcons = () => {
   return (
     <div className=" flex justify-start space-x-6 mt-12">
+      {/* WhatsApp icon */}
       <a
         href="https://wa.me/your_whatsapp_number"
         target="_blank"
@@ -18,6 +19,7 @@ const SocialMediaIcons = () => {
       >
         <IoLogoWhatsapp size={25} />
       </a>
+      {/* Facebook icon */}
       <a
         href="https://www.facebook.com/your_facebook_profile"
         target="_blank"
@@ -26,6 +28,7 @@ const SocialMediaIcons = () => {
       >
         <IoLogoFacebook size={25} />
       </a>
+      {/* Linkedin icon */}
       <a
         href="https://www.linkedin.com/in/your_linkedin_profile"
         target="_blank"
@@ -34,6 +37,7 @@ const SocialMediaIcons = () => {
       >
         <IoLogoLinkedin size={25} />
       </a>
+      {/* Instagram icon */}
       <a
         href="https://www.instagram.com/your_instagram_profile"
         target="_blank"
@@ -42,6 +46,7 @@ const SocialMediaIcons = () => {
       >
         <IoLogoInstagram size={25} />
       </a>
+      {/* Twitter icon */}
       <a
         href="https://twitter.com/your_twitter_profile"
         target="_blank"

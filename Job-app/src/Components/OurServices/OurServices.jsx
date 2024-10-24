@@ -11,6 +11,7 @@ const OurServices = () => {
       id="Services"
       viewport={{ once: false, amount: 0.3 }}
     >
+      {/* Header Section */}
       <motion.div
         className="text-center mb-12"
         variants={headerVariant}
@@ -23,6 +24,7 @@ const OurServices = () => {
           Let's help you find the job of your dreams
         </h3>
       </motion.div>
+      {/* Services Grid */}
       <div className="container max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 lg:px-4">
         {ServiceData.map((singleService, index) => (
           <motion.div

@@ -9,9 +9,12 @@ import TrustedCompanies from "../../Components/TrustedCompanies/TrustedCompanies
 import AboutUs from "../../Components/AboutUs/AboutUs";
 import Metrics from "../../Components/Metrics/Metrics";
 
+// Landing page
 const HomePage = () => {
   return (
     <div className="w-full h-auto">
+      {" "}
+      {/* Main container for the homepage */}
       <Hero />
       <AboutUs />
       <OurServices />

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 
+// Reusables input field
 const InputField = ({
   placeholder,
   value,

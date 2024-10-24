@@ -4,10 +4,11 @@ import { motion } from "framer-motion";
 import { headerVariant, cardVariant } from "../Reusables/AnimationVariants";
 
 const TrustedCompanies = () => {
-  const sliderRef = useRef();
+  const sliderRef = useRef(); // Creating a reference for the slider container
 
   return (
     <section className="container mx-auto py-16" id="TrustedCompanies">
+      {/* Container for the entire section with padding */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4">
         <motion.div
           className="text-start"
@@ -15,6 +16,7 @@ const TrustedCompanies = () => {
           initial="hidden"
           whileInView="visible"
         >
+          {/* Section heading */}
           <h1 className="h1">Trusted by</h1>
           <p className="mt-2 subtitle">
             We are proud to be associated with these esteemed companies
@@ -27,6 +29,7 @@ const TrustedCompanies = () => {
             ref={sliderRef}
             className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide"
           >
+            {/* Slider content with horizontal scrolling */}
             {companies.map((company, index) => (
               <motion.div
                 className="flex-shrink-0 p-4 snap-start"
@@ -35,6 +38,7 @@ const TrustedCompanies = () => {
                 whileInView="visible"
                 variants={cardVariant(index)}
               >
+                {/* Company logo */}
                 <img
                   src={company.logo}
                   alt={company.name}

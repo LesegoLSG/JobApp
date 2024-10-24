@@ -21,7 +21,7 @@ const Hero = () => {
       {/* Banner Content */}
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 lg:px-0">
         <h1 className="text-white text-3xl md:text-5xl lg:text-6xl font-bold mb-4">
-          Connect with the Best IT Jobs
+          <span className="text-accent">Connect</span> with the best IT Jobs
         </h1>
         <p className="text-white text-lg md:text-xl mb-6 max-w-lg">
           Join leading tech companies with our expert recruitment services. Let

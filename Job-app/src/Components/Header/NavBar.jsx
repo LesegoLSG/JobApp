@@ -6,12 +6,14 @@ import { AuthContext } from "../../Contexts/AuthContext";
 import { auth } from "../firebase";
 import { signOut } from "firebase/auth";
 import TopScroller from "../Reusables/TopScroller";
+import ConfirmationModal from "../Reusables/ConfirmationModal";
 
 const NavBar = () => {
   const navigate = useNavigate();
   const [isNav, setIsNav] = useState(false);
   const { currentUser } = useContext(AuthContext);
   const [activeSection, setActiveSection] = useState("hero");
+  const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
 
   const sections = ["Hero", "Services", "Contact"];
 
@@ -49,7 +51,8 @@ const NavBar = () => {
   const handleLogout = async () => {
     try {
       await signOut(auth); // Sign out user
-      console.log("User logged out");
+      setIsModalOpen(false);
+
       navigate("/"); // Redirect to login page after logout
     } catch (error) {
       console.log("Error logging out:", error);
@@ -114,12 +117,12 @@ const NavBar = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`fixed top-16 right-0 w-full flex justify-center items-center h-auto bg-gray-300 z-40 transition-transform transform ${
+          className={`fixed top-16 right-0 w-full flex justify-center items-center h-auto bg-gray-900 z-40 transition-transform transform ${
             isNav ? "translate-x-0" : "translate-x-full"
           }`}
           style={{ overflowX: "hidden" }} // Prevent overflow from mobile menu
         >
-          <ul className="p-8 text-xl flex flex-col items-center space-y-4">
+          <ul className="p-8 text-white font-semibold text-xl flex flex-col items-center space-y-4">
             {sections.map((section) => (
               <li key={section}>
                 <ScrollLink
@@ -138,14 +141,28 @@ const NavBar = () => {
             >
               Jobs
             </li>
-            <li className="cursor-pointer">Submit Resume</li>
+            <li
+              className="cursor-pointer"
+              onClick={() => handleNavigateToPage("/resume/submit")}
+            >
+              Submit Resume
+            </li>
             <li>
-              <button
-                onClick={() => navigate("/auth-signIn")}
-                className="button-action mt-4 w-full"
-              >
-                Login
-              </button>
+              {currentUser ? (
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="button-action block md:hidden"
+                >
+                  Logout
+                </button>
+              ) : (
+                <button
+                  onClick={() => navigate("/auth-signIn")}
+                  className="button-action block md:hidden"
+                >
+                  Login
+                </button>
+              )}
             </li>
           </ul>
         </div>
@@ -154,7 +171,7 @@ const NavBar = () => {
         <div>
           {currentUser ? (
             <button
-              onClick={handleLogout}
+              onClick={() => setIsModalOpen(true)}
               className="button-action hidden md:block"
             >
               Logout
@@ -169,6 +186,13 @@ const NavBar = () => {
           )}
         </div>
       </header>
+      {/* Confirmation Modal */}
+      <ConfirmationModal
+        isOpen={isModalOpen}
+        onConfirm={handleLogout}
+        onCancel={() => setIsModalOpen(false)} // Close modal without logging out
+      />
+      {/* Scroll to the top of a section button */}
       <TopScroller />
     </>
   );

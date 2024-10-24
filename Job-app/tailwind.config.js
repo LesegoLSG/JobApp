@@ -19,7 +19,7 @@ export default {
         bgColor:'#EAF0F1',
         headers: '#0E2954',
         action: '#1F6E8C',
-        accent: '#2E8A99',
+        accent: '#24c964',
       },
       boxShadow: {
         custom: '0 6px 8px rgba(65, 201, 226, 0.1), 0 1px 3px rgba(65, 201, 226, 1)'

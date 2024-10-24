@@ -1,3 +1,11 @@
+import Interview from "../../assets/ServicesImages/Interview.jpeg";
+import jobSearch from "../../assets/ServicesImages/jobSearch.png";
+import Network from "../../assets/ServicesImages/Network.jpeg";
+import Resume from "../../assets/ServicesImages/Resume.jpeg";
+import Salary from "../../assets/ServicesImages/Salary.png";
+import skilldevelop from "../../assets/ServicesImages/skilldevelop.jpeg";
+
+// Service data
 const ServiceData = [
   {
     id: 1,
@@ -9,8 +17,7 @@ const ServiceData = [
       "By utilizing our extensive database of job listings, you can discover opportunities that align with your career aspirations and skill set. We partner with a variety of companies across different industries, providing you with access to job postings that you may not find elsewhere. Whether you're just starting out or seeking a new challenge, our job search tools make the process smoother and more efficient.",
       "Additionally, our team of experts is always available to provide support and guidance throughout your job search process. From crafting targeted applications to following up with potential employers, we are here to assist you every step of the way. Together, we can ensure that you're not just applying to jobs but making informed career choices.",
     ],
-    imageUrl:
-      "https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    imageUrl: jobSearch,
   },
   {
     id: 2,
@@ -22,8 +29,7 @@ const ServiceData = [
       "In today's job market, many companies use Applicant Tracking Systems (ATS) to screen resumes. Our service helps ensure that your resume is ATS-friendly by incorporating the right keywords and formatting. This increases your chances of passing the initial screening and landing an interview.",
       "We also offer tips on how to tailor your resume to specific job descriptions. Whether you're applying for a technical role or a creative position, we'll help you present yourself in the best light. With our resume optimization strategies, you can feel confident that your resume will capture the attention of hiring managers.",
     ],
-    imageUrl:
-      "https://images.pexels.com/photos/4506100/pexels-photo-4506100.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    imageUrl: Resume,
   },
   {
     id: 3,
@@ -35,8 +41,7 @@ const ServiceData = [
       "Networking is not just about making contacts; it's about building relationships that can lead to future opportunities. Whether you're looking for mentorship, collaboration, or even job leads, expanding your professional network can be a game-changer in your career.",
       "By fostering these connections, you position yourself for potential job leads and collaborations that might not be publicly advertised. Our service offers a structured way to network, ensuring you can make the right connections without feeling overwhelmed by the process.",
     ],
-    imageUrl:
-      "https://images.pexels.com/photos/1181433/pexels-photo-1181433.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    imageUrl: Network,
   },
   {
     id: 4,
@@ -48,8 +53,7 @@ const ServiceData = [
       "Our mock interview sessions are tailored to your industry and job role, providing you with personalized feedback on your responses, body language, and overall presentation. This practice helps you refine your answers and approach to different types of interviews, whether they are technical, behavioral, or situational.",
       "In addition to mock interviews, we provide resources on interview etiquette, effective storytelling techniques, and how to convey your value to potential employers. By equipping you with these tools, we aim to help you make a lasting impression and secure the job you desire.",
     ],
-    imageUrl:
-      "https://images.pexels.com/photos/1181355/pexels-photo-1181355.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    imageUrl: Interview,
   },
   {
     id: 5,
@@ -61,8 +65,7 @@ const ServiceData = [
       "Our workshops are led by industry professionals who bring real-world experience to the table. Whether you're a beginner looking to learn new skills or a seasoned professional wanting to stay current, our workshops cater to all skill levels.",
       "By participating in these workshops, you can acquire new skills, gain practical experience, and improve your employability. Our goal is to make you a more competitive candidate in your field by providing hands-on training and resources.",
     ],
-    imageUrl:
-      "https://images.pexels.com/photos/3184404/pexels-photo-3184404.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    imageUrl: skilldevelop,
   },
   {
     id: 6,
@@ -74,8 +77,7 @@ const ServiceData = [
       "We offer personalized strategies based on your role, experience, and the specific company you're negotiating with. Whether you're negotiating for a new position or seeking a raise in your current job, our guidance ensures you're prepared to make your case confidently.",
       "By preparing you to articulate your value and negotiate confidently, we aim to empower you to secure a salary that reflects your skills and contributions. With our assistance, you can approach salary discussions with the knowledge and confidence to achieve the compensation you deserve.",
     ],
-    imageUrl:
-      "https://images.pexels.com/photos/3943481/pexels-photo-3943481.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    imageUrl: Salary,
   },
 ];
 export default ServiceData;

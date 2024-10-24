@@ -4,7 +4,7 @@ import SingleJobSideBar from "../../Components/SingleJobComponents/SingleJobSide
 import SingleJobDescription from "../../Components/SingleJobComponents/SingleJobDescription";
 import jobs from "../../Components/Jobs/JobData";
 import { useEffect } from "react";
-
+// Single job main page
 const SingleJob = () => {
   const { id } = useParams();
   const job = jobs.find((job) => job.id === parseInt(id));
@@ -20,8 +20,10 @@ const SingleJob = () => {
   console.log("singleJob:", job);
   return (
     <div className="w-full mt-28 mb-16">
+      {/* SideBar section*/}
       <div className="w-full flex md:flex-row flex-col items-start relative md:px-16 px-5 gap-9">
         <SingleJobSideBar job={job} />
+        {/* Job description section */}
         <div className="w-full">
           <SingleJobDescription job={job} />
         </div>

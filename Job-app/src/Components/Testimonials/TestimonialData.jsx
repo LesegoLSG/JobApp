@@ -1,3 +1,4 @@
+// Testimonial data
 const testimonialData = [
   {
     id: 1,
@@ -21,7 +22,7 @@ const testimonialData = [
     imageUrl:
       "https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     comment:
-      "From the first call to the final placement, the team was exceptional. They took the time to understand my career goals and helped me secure a fantastic role in IT support. I appreciate their personalized approach and expertise.",
+      "From the first call to the final placement, the team was exceptional. They took the time to understand my career goals and helped me secure a fantastic role in IT support. I appreciate their personalized approach and expertise.It was a great experience",
   },
   {
     id: 4,

@@ -1,11 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  cardVariant,
-  headerVariant,
-  popUpVariant,
-} from "../Reusables/AnimationVariants";
+import { cardVariant, headerVariant } from "../Reusables/AnimationVariants";
 
+// About section for the landing page
 const AboutUs = () => {
   return (
     <motion.section

@@ -21,8 +21,9 @@ const SingleJobDescription = ({ job }) => {
     .slice(0, 3);
 
   return (
-    <div className="w-full flex flex-col gap-8">
-      <div className="w-full flex flex-col items-start gap-5 bg-white rounded-lg p-9 shadow-sm border border-gray-200">
+    <div className="w-full flex flex-col ">
+      {/* Job description */}
+      <div className="w-full flex flex-col items-start gap-5 bg-white rounded-lg p-4 shadow-sm border border-gray-200">
         <h1 className="text-accent font-semibold text-xl">Job Description</h1>
         <p
           className="text-gray-600 leading-7"
@@ -44,12 +45,12 @@ const SingleJobDescription = ({ job }) => {
         ></p>
       </div>
       <div className="w-full flex flex-col gap-4 items-center">
-        <div className="w-full text-accent font-semibold text-xl text-center bg-white rounded-lg p-3 mb-4 border border-gray-200">
+        <div className="w-full text-accent font-semibold text-xl text-center bg-white rounded-lg p-3 my-4 border border-gray-200">
           Similar Jobs
         </div>
 
         {/* Display similar jobs */}
-        <div className="flex flex-wrap justify-start items-center">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-x-2">
           {similarJobs.map((similarJob) => (
             <JobMainCard key={similarJob.id} job={similarJob} />
           ))}

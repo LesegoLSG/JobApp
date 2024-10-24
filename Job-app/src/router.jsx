@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 import HomePage from "./Pages/LandingPage/HomePage";
 import PageNotFound from "./Components/Errors/PageNotFound";
 import SingleJob from "./Pages/SingleJob/SingleJob";
-import LoginRegisterPage from "./Pages/LoginRegister/LoginRegisterPage";
 import PortalPage from "./Pages/CompanyPortalPages/PortalPage";
 import DashboardPage from "./Pages/CompanyPortalPages/DashboardPage";
 import UsersPage from "./Pages/CompanyPortalPages/UsersPage";
@@ -13,38 +12,42 @@ import Login from "./Components/Authentication/Login";
 import Register from "./Components/Authentication/Register";
 import ServiceDetails from "./Components/OurServices/ServiceDetails/ServiceDetails";
 import SubmitResume from "./Pages/Application/SubmitResume";
+import SuccessPage from "./Pages/SuccessPage/SuccessPage";
 
+// Creating the router with defined routes
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/", // Home route
     element: (
       <Layout>
+        {" "}
+        {/* Wrapping HomePage in Layout for consistent design */}
         <HomePage />
       </Layout>
     ),
-    errorElement: <PageNotFound />,
+    errorElement: <PageNotFound />, // Error handling for this route
   },
   {
-    path: "/jobs-all",
+    path: "/jobs-all", // Route for viewing all jobs
     element: (
       <Layout>
-        <Jobs />
+        <Jobs /> {/* Displaying the Jobs component */}
       </Layout>
     ),
   },
   {
-    path: "/singlejob/:id",
+    path: "/singlejob/:id", // Dynamic route for a single job based on its ID
     element: (
       <Layout>
-        <SingleJob />
+        <SingleJob /> {/* Displaying the SingleJob component */}
       </Layout>
     ),
   },
   {
-    path: "/apply/:id",
+    path: "/apply/:id", // Route for applying to a job based on its ID
     element: (
       <Layout>
-        <ApplyNowForm />
+        <ApplyNowForm /> {/* Displaying the ApplyNowForm component */}
       </Layout>
     ),
   },
@@ -70,6 +73,14 @@ const router = createBrowserRouter([
     element: (
       <Layout>
         <Login />
+      </Layout>
+    ),
+  },
+  {
+    path: "/successpage",
+    element: (
+      <Layout>
+        <SuccessPage />
       </Layout>
     ),
   },

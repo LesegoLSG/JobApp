@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import jobs from "../../Components/Jobs/JobData";
 import { AuthContext } from "../../Contexts/AuthContext";
 import { db } from "../../Components/firebase";
@@ -13,6 +13,8 @@ import {
 const ApplyNowForm = () => {
   const { id } = useParams();
   const jobToApply = jobs.find((job) => job.id === parseInt(id));
+
+  const navigate = useNavigate();
 
   const { currentUser } = useContext(AuthContext);
 
@@ -31,7 +33,7 @@ const ApplyNowForm = () => {
       [name]: files ? files[0] : value,
     });
   };
-
+  // HandleSubmit
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -63,22 +65,20 @@ const ApplyNowForm = () => {
         ),
         applicationData
       );
-      console.log("Application submitted successfully!");
+      navigate("/successpage");
       alert("Application submitted successfully!");
     } catch (error) {
       console.error("Error submitting application:", error);
       alert("Error submitting the application. Please try again.");
     }
-
-    console.log("Form Submitted:", formData);
-    // Add form submission logic here (e.g., API call to send formData)
   };
 
   return (
-    <section className="w-full flex justify-center mt-20">
-      <div className="w-full max-w-3xl bg-white shadow-md rounded-lg p-8">
-        <h2 className="text-2xl font-semibold text-indigo-500 mb-6 text-center">
-          Apply for the Job :{" "}
+    <section className="w-full flex justify-center mt-20 p-4">
+      <div className="w-full max-w-3xl bg-white shadow-md rounded-lg p-4">
+        {/* Heading with job a user selected or apply for */}
+        <h2 className="h3-small font-semibold text-accent mb-6 text-center">
+          Applying for the Job :{" "}
           <span className="text-gray-700">{jobToApply.title}</span>
         </h2>
 
@@ -176,11 +176,8 @@ const ApplyNowForm = () => {
           </div>
 
           {/* Submit Button */}
-          <div>
-            <button
-              type="submit"
-              className="w-full bg-indigo-500 text-white py-3 rounded-md hover:bg-indigo-600 focus:outline-none focus:ring-4 focus:ring-indigo-300 transition duration-300"
-            >
+          <div className="w-full flex justify-center items-center">
+            <button type="submit" className="button-action">
               Submit Application
             </button>
           </div>

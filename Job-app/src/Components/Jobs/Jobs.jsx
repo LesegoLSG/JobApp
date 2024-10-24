@@ -4,7 +4,7 @@ import jobs from "./JobData";
 import SearchBar from "./SearchBar";
 import ListedJobs from "./ListedJobs";
 import jobsData from "./JobData";
-
+// Job Main section
 const Jobs = () => {
   const [filters, setFilters] = useState({ contract: [], location: [] });
   const [searchQuery, setSearchQuery] = useState("");
@@ -32,18 +32,24 @@ const Jobs = () => {
   }, []);
 
   return (
-    <section className="w-full h-auto py-32 bg-bgColor" id="Jobs">
+    <section className="w-full h-auto py-20 bg-bgColor" id="Jobs">
+      {/* Header */}
       <div className="flex flex-col justify-center items-center gap-y-2">
         <h1 className="h1">
           Find A <span className="text-secondary">Perfect Job!</span>
         </h1>
-        <h3 className="h3 mt-4">Let's help you find a Job of your Dreams</h3>
+
+        <h3 className="h3-small text-center mb-4">
+          Let's help you find a Job of your Dreams
+        </h3>
       </div>
       <div className="w-full flex md:flex-row flex-col items-start relative md:px-16 px-5 gap-9">
         <Filters filters={filters} setFilters={setFilters} />
 
         <div className="w-full">
+          {/* Search bar */}
           <SearchBar setSearchQuery={setSearchQuery} />
+          {/* Jobs listing */}
           <ListedJobs jobs={filteredJobs} />
         </div>
       </div>

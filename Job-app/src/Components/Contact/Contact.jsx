@@ -3,14 +3,14 @@ import ContactForm from "./ContactForm";
 import MapContactDetails from "./MapContactDetails";
 import { motion } from "framer-motion";
 import { headerVariant } from "../Reusables/AnimationVariants";
-
+// Contact section for the landing page
 const Contact = () => {
   return (
     <section className="container mx-auto py-16" id="Contact">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-0">
         <motion.div
           className="text-center"
-          variants={headerVariant}
+          variants={headerVariant} //header animation
           initial="hidden"
           whileInView="visible"
         >

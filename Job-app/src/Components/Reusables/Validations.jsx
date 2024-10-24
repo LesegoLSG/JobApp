@@ -1,24 +1,25 @@
+// Email validation using regex
 export const validateEmail = (email) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 };
-
+// Password validation using regex
 export const validatePassword = (password) => {
-  const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{6,}$/;
+  const passwordRegex = /^.{6,}$/;
   return passwordRegex.test(password);
 };
 
-// Add more validation functions as needed
+// Phone number validation using regex
 export const validatePhoneNumber = (phone) => {
   const phoneRegex = /^\d+$/;
   return phoneRegex.test(phone);
 };
-
+// Letter only validation using regex for inputs such as names
 export const validateLettersOnly = (letters) => {
   const letterRegex = /^[A-Za-z]+$/;
   return letterRegex.test(letters);
 };
-
+// UserName validation using regex
 export const validateUsername = (username) => {
   const usernameRegex = /^[a-zA-Z0-9_]{3,16}$/;
   return usernameRegex.test(username);

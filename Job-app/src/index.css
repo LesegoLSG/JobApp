@@ -8,7 +8,7 @@
   }
 
   .button-action-save-job {
-    @apply bg-action text-sm min-w-32 md:text-base hover:bg-accent rounded-lg text-white font-bold px-4 mr-24 md:mr-2 py-1 transition duration-300
+    @apply bg-gray-500 text-sm min-w-32 md:text-base hover:bg-accent rounded-lg text-white font-bold px-4 py-2 transition duration-300
   }
 
   .h1 {

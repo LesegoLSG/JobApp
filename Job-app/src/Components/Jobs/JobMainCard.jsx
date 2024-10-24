@@ -6,12 +6,12 @@ import {
   IoBookmarkOutline,
 } from "react-icons/io5";
 import { Link } from "react-router-dom";
-
+// Job Card
 const JobMainCard = ({ job }) => {
   return (
     <div
       key={job.id}
-      className="w-full md:w-[48%] bg-white mb-5 rounded-lg flex flex-col md:flex-row items-start md:items-center justify-between p-6 shadow-lg transition-transform duration-300 hover:shadow-2xl hover:scale-105"
+      className="w-full bg-white mb-5 rounded-lg flex flex-col md:flex-row items-start md:items-center justify-between p-6 shadow-lg transition transform duration-300 hover:shadow-2xl hover:scale-105"
     >
       <div className="flex flex-col md:flex-row md:items-center gap-6 w-full">
         <img
@@ -49,13 +49,15 @@ const JobMainCard = ({ job }) => {
       </div>
       {/* Actions */}
       <div className="flex flex-col gap-4 mt-4 md:mt-0 self-stretch md:self-end">
+        {/* Apply button/link */}
         <Link
           to={`/singlejob/${job.id}`}
           className="button-action text-center py-2 px-4 bg-secondary text-white rounded-lg shadow-md transition-colors duration-300 hover:bg-secondary-dark"
         >
           Apply
         </Link>
-        <button className="button-action-save-job flex justify-center items-center gap-2 py-2 px-4 bg-gray-200 rounded-lg hover:bg-gray-300 transition-colors duration-300">
+        {/* Save job button */}
+        <button className="button-action-save-job flex justify-center items-center">
           <IoBookmarkOutline />
           Save Job
         </button>

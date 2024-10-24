@@ -3,14 +3,14 @@ import bbd from "../../assets/CompanyImages/bbd.png";
 import standardbank from "../../assets/CompanyImages/standardbank.png";
 import Miway from "../../assets/CompanyImages/Miway.png";
 import Tshimologong from "../../assets/CompanyImages/Tshimologong.png";
-// import vuma from "../../assets/CompanyImages/vuma.png";
 import mtn from "../../assets/CompanyImages/mtn.png";
 import absa from "../../assets/CompanyImages/absa.png";
+// Company details
 const companies = [
   {
-    id: 1,
-    name: "Company 1",
-    logo: accenture,
+    id: 1, //id
+    name: "Company 1", //name
+    logo: accenture, //Logo
   },
   {
     id: 2,

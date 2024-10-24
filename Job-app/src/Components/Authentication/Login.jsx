@@ -6,52 +6,66 @@ import LoadingModal from "../Reusables/LoadingModal";
 import DialogBox from "../Reusables/DialogBox";
 import { validateEmail, validatePassword } from "../Reusables/Validations";
 import InputField from "../Reusables/InputFields/InputField";
-
+import { useLocation } from "react-router-dom";
+// Login section
 const Login = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [isLoading, setIsloading] = useState(false);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [dialogType, setDialogType] = useState(""); // Can be "success" or "error"
   const [message, setMessage] = useState("");
-
-  const [isFocused, setIsFocused] = useState(false);
-  const [isInvalid, setIsInvalid] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
 
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
 
+  //Smooth scrolling to the top of a section
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Smooth scrolling effect
+    });
+  }, []);
+
+  //Input change
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const openSuccessDialog = () => {
-    setDialogType("success");
-    setMessage("Login success");
-    setIsDialogOpen(true);
-  };
-
+  //Error dialog pop up
   const openErrorDialog = () => {
     setDialogType("error");
     setMessage("Error processing your request, please try again later");
     setIsDialogOpen(true);
   };
 
+  //Closing the error dialog pop up
   const closeDialog = () => {
     setIsDialogOpen(false);
   };
 
+  //Navigating the user after login is successful
+  const navigateOnSuccess = () => {
+    const previousPage = location.state?.from?.pathname || "/";
+    console.log("previous page:", previousPage);
+    if (previousPage === "/auth-signUp") {
+      navigate("/jobs-all");
+    } else {
+      navigate(-1);
+    }
+  };
+
+  //Submit login details for authentication
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       setIsloading(true);
       await signInWithEmailAndPassword(auth, formData.email, formData.password);
       setIsloading(false);
-      openSuccessDialog();
-      navigate(-1);
+      navigateOnSuccess();
     } catch (error) {
       setIsloading(false);
       openErrorDialog();
@@ -59,12 +73,13 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-[#84A7A1]">
-      <div className="bg-white shadow-md rounded-lg p-8 w-full max-w-md">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-bgColor px-4">
+      <div className="bg-white shadow-md rounded-lg p-4 md:p-8 w-full max-w-md">
+        {/* header */}
         <h2 className="text-3xl font-semibold text-center mb-6 text-[#0E2954]">
           Login to Your Account
         </h2>
-
+        {/* Login form */}
         <form onSubmit={handleLogin} className="space-y-4">
           {/* Email Input */}
           <div>
@@ -99,7 +114,8 @@ const Login = () => {
               value={formData.password}
               onChange={handleInputChange}
               validate={validatePassword}
-              errorMessage="Invalid password"
+              errorMessage="Should contain at least 6 characters"
+              placeholder="Password"
             />
           </div>
 
@@ -133,7 +149,10 @@ const Login = () => {
           </p>
         </div>
       </div>
+      {/* Loading effect while waiting for a response */}
       {isLoading && <LoadingModal />}
+      {/* Dialog
+       */}
       {isDialogOpen && (
         <DialogBox
           dialogType={dialogType}
