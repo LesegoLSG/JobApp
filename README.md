@@ -47,7 +47,7 @@ To get this project up and running locally, follow these steps:
    git clone https://github.com/LesegoLSG/JobApp.git
    ```
 2. **Import project** : After cloning, import the cloned project to your preferred IDE (I used visual studio to develop this project).
-3. **Navigate to the project directory:** : Now make sure you are on the 'convertor' directory.
+3. **Navigate to the project directory:** : Now make sure you are on the 'Job-app' directory.
    ````
    cd Job-app
    ````
