@@ -15,13 +15,13 @@ const Contact = () => {
           whileInView="visible"
         >
           <h1 className="h1">Get in touch</h1>
-          <h3 className="mt-4 subtitle">
+          <h3 className="mt-1 subtitle">
             Feel free to reach out to me via any of these platforms:
           </h3>
         </motion.div>
 
         {/* Main section */}
-        <div className="w-full h-auto flex flex-col md:flex-row justify-center gap-4 mt-6">
+        <div className="w-full h-auto flex flex-col md:flex-row justify-center gap-4 mt-10">
           {/* Map section */}
           <MapContactDetails />
 
