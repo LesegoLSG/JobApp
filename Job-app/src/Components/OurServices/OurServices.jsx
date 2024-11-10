@@ -20,12 +20,12 @@ const OurServices = () => {
         exit="exit"
       >
         <h1 className="h1">What we do</h1>
-        <h3 className="mt-4 subtitle">
+        <h3 className="mt-1 subtitle">
           Let's help you find the job of your dreams
         </h3>
       </motion.div>
       {/* Services Grid */}
-      <div className="container max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 lg:px-4">
+      <div className="container max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 lg:px-4 mt-10">
         {ServiceData.map((singleService, index) => (
           <motion.div
             key={index}

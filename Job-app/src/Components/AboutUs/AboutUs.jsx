@@ -19,7 +19,7 @@ const AboutUs = () => {
           whileInView="visible"
         >
           <h2 className="h1">Why choose us</h2>
-          <p className="subtitle mt-4">
+          <p className="subtitle mt-1">
             We are committed to delivering the best products and services to our
             clients. Our team of experts is passionate about making a
             difference.
@@ -27,7 +27,7 @@ const AboutUs = () => {
         </motion.div>
 
         {/* About Us Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-10">
           {/* Image Section */}
           <motion.div
             className="relative group"

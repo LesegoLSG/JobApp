@@ -27,11 +27,11 @@ const Testimonial = () => {
         whileInView="visible"
       >
         <h1 className="h1">Client stories</h1>
-        <h3 className="subtitle mt-4">Hear what others say</h3>
+        <h3 className="subtitle mt-1">Hear what others say</h3>
       </motion.div>
 
       {/* Testimonials grid */}
-      <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full max-w-6xl mt-4">
+      <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full max-w-6xl mt-10">
         {displayedTestimonials.map((testimonial, index) => (
           <motion.div
             key={index}
