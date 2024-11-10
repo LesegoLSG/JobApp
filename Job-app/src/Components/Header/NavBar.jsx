@@ -30,7 +30,6 @@ const NavBar = () => {
         duration: 500,
         offset: -80,
       });
-      setActiveSection(section);
     }
   };
 
@@ -79,9 +78,7 @@ const NavBar = () => {
                   smooth={true}
                   duration={500}
                   onClick={() => handleNavigateActive(section)}
-                  className={`cursor-pointer ${
-                    activeSection === section ? "text-red-500" : ""
-                  }`}
+                  className={`cursor-pointer`}
                 >
                   {section}
                 </ScrollLink>
@@ -156,12 +153,20 @@ const NavBar = () => {
                   Logout
                 </button>
               ) : (
-                <button
-                  onClick={() => navigate("/auth-signIn")}
-                  className="button-action block md:hidden"
-                >
-                  Login
-                </button>
+                <div className="flex flex-col justify-center items-center gap-y-4 hover:underline ">
+                  <button
+                    onClick={() => navigate("/auth-signIn")}
+                    className="button-action block md:hidden"
+                  >
+                    Login
+                  </button>
+                  <p
+                    onClick={() => navigate("/auth-signUp")}
+                    className="block md:hidden text-sm"
+                  >
+                    Sign up for free
+                  </p>
+                </div>
               )}
             </li>
           </ul>
