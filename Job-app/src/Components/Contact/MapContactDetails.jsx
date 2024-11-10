@@ -16,7 +16,7 @@ const MapContactDetails = () => {
       {/* Google Map embedded */}
       <div className="w-full h-80 flex justify-center items-center">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!4v1729486153536!6m8!1m7!1s6h_1CC5XJ31V9cXL36wAQA!2m2!1d-26.25830027575898!2d27.84614806873784!3f96.58!4f0!5f0.7820865974627469"
+          src="https://www.google.com/maps/embed?pb=!4v1731226071034!6m8!1m7!1sksVsGF2xK46qkHRf5Khe9w!2m2!1d-26.13306615946993!2d27.97306558649697!3f137.03249440931833!4f21.532383422355593!5f0.7820865974627469"
           className="w-full h-full"
           style={{ border: "0" }}
           allowfullscreen=""
@@ -27,7 +27,9 @@ const MapContactDetails = () => {
       {/* contact details */}
       <div className="w-full h-auto p-4">
         <h3 className="h3-small my-2">Our location to Head Quaters</h3>
-        <p className="text-gray-800">1376 Matlomo Street, Moletsane Soweto</p>
+        <p className="text-gray-800">
+          257 Beyers Naudé Dr, Cresta, Randburg, 2195
+        </p>
         <div className="space-y-6">
           {/* Call */}
           <div className="flex justify-start items-center gap-x-6 mt-4 ">
