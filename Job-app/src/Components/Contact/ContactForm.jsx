@@ -50,6 +50,15 @@ const ContactForm = () => {
       initial="hidden"
       whileInView="visible"
     >
+      {/* Personalized fact */}
+      <div className="my-8 text-center">
+        <p className="text-gray-600 italic">
+          Fun fact: Last month, we helped over 500 customers find answers to
+          their questions!. Remember, the only bad question is the one you
+          didn't ask." — Feel free to reach out!
+        </p>
+      </div>
+
       <h3 className="h3-small">Send Your Query</h3>
       <p className="text-gray-600 font-normal mb-4">
         Let us know how to get back to you
@@ -128,6 +137,7 @@ const ContactForm = () => {
           </button>
         </div>
       </form>
+
       {/* Open success dialog */}
       {isDialogOpen && (
         <DialogBox
