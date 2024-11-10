@@ -24,7 +24,7 @@
   }
 
   .h3-small {
-    @apply  text-xl font-semibold text-accent
+    @apply  text-lg font-semibold text-accent
   }
 
   .subtitle{
