@@ -1,9 +1,12 @@
 import React from "react";
 import CountUp from "react-countup"; // Importing CountUp for animated number counting
 import { FaBriefcase, FaUsers, FaSmile, FaClock } from "react-icons/fa"; // Importing icons for metrics
+import { useInView } from "react-intersection-observer";
 
 // MetricsDisplay component
 const MetricsDisplay = () => {
+  const { ref, inView } = useInView({ triggerOnce: false });
+
   // Metrics data array, containing objects with the metric label, value, color, and associated icon
   const metrics = [
     {
@@ -33,7 +36,7 @@ const MetricsDisplay = () => {
   ];
 
   return (
-    <div className="py-16 w-full h-full bg-gray-50">
+    <div className="py-16 w-full h-full bg-gray-50" ref={ref}>
       {" "}
       {/* Container for the entire section */}
       <div className="container max-w-6xl mx-auto text-center px-4">
@@ -59,7 +62,7 @@ const MetricsDisplay = () => {
                 {/* Displays the icon */}
               </div>
               <div className={`text-4xl font-bold ${metric.color}`}>
-                <CountUp end={metric.value} duration={3.5} />{" "}
+                {inView ? <CountUp end={metric.value} duration={3.5} /> : "0"}{" "}
                 {/* Animates the number using CountUp */}
               </div>
               <p className="mt-4 text-gray-600">{metric.label}</p>{" "}
