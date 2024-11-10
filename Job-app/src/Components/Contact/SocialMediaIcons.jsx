@@ -9,7 +9,7 @@ import { FaXTwitter } from "react-icons/fa6";
 //Social media for contact form
 const SocialMediaIcons = () => {
   return (
-    <div className=" flex justify-start space-x-6 mt-12">
+    <div className=" flex justify-start space-x-6 mt-12 mx-2">
       {/* WhatsApp icon */}
       <a
         href="https://wa.me/your_whatsapp_number"
