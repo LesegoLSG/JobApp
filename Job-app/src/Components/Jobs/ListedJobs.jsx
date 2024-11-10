@@ -30,11 +30,11 @@ const ListedJobs = ({ jobs }) => {
       <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-x-4 mt-8">
         {/* If there are no job display "No jobs found or matched"*/}
         {!jobs.length && (
-          <span className="w-full text-center">
-            No Jobs matched your filters!
+          <span className="w-full  flex justify-center items-start text-center text-xl font-semibold">
+            Sorry...No Jobs matched your filters!
           </span>
         )}
-        {/* If there are job, then display them */}
+        {/* If there are jobs, then display them */}
         {records.map((job) => (
           <JobMainCard key={job.id} job={job} />
         ))}
