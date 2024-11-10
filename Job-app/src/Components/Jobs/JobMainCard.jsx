@@ -17,7 +17,7 @@ const JobMainCard = ({ job }) => {
         <img
           src={job.logo}
           alt={job.title}
-          className="w-[70px] h-[70px] object-contain rounded-full shadow-md" // Added shadow and rounded image
+          className="w-[70px] h-[70px] object-contain rounded-full" // Added shadow and rounded image
         />
         <div className="flex flex-col gap-[8px] w-full">
           <div className="flex items-center justify-between">
