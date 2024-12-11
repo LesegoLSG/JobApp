@@ -245,8 +245,8 @@ const Register = () => {
           <div>
             <p className="text-sm text-gray-500 mt-2">
               Already have an account?{" "}
-              <a href="/auth-signIn" className="text-[#2E8A99] hover:underline">
-                Sign In
+              <a className="text-[#2E8A99] hover:underline">
+                <span onClick={() => navigate("/auth-signIn")}>Sign In</span>
               </a>
             </p>
           </div>
