@@ -154,18 +154,18 @@ const NavBar = () => {
                 </button>
               ) : (
                 <div className="flex flex-col justify-center items-center gap-y-4 hover:underline ">
+                  <p
+                    onClick={() => navigate("/auth-signUp")}
+                    className="block md:hidden  font-semibold text-xl"
+                  >
+                    Sign up for free
+                  </p>
                   <button
                     onClick={() => navigate("/auth-signIn")}
                     className="button-action block md:hidden"
                   >
                     Login
                   </button>
-                  <p
-                    onClick={() => navigate("/auth-signUp")}
-                    className="block md:hidden text-sm"
-                  >
-                    Sign up for free
-                  </p>
                 </div>
               )}
             </li>
