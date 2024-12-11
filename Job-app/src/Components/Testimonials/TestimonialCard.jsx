@@ -15,7 +15,7 @@ const TestimonialCard = ({ singleTestimonial }) => {
           <h1 className="text-lg font-bold text-gray-800">
             {singleTestimonial.name}
           </h1>
-          <h2 className="text-sm text-gray-500">Customer</h2>
+          <h2 className="text-sm text-gray-500">Candidate</h2>
         </div>
       </div>
 
